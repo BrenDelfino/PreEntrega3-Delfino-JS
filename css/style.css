@@ -1,0 +1,248 @@
+/*** Reset ***/
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+background-color: #f9bd93;
+font-family: "Roboto Condensed", sans-serif;
+font-optical-sizing: auto;
+font-weight: 500;
+font-style: normal;
+}
+
+/*** Estilos header ***/
+
+header nav{
+    display: flex;
+    height: 120px;
+    background-color: #e9a474;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+header nav a img{
+    display: inline-block;
+    height: 170px;
+    padding: 30px;
+}
+
+header nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 30px;
+}
+
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header nav ul li a:hover{
+    color: #933c1b;
+}
+
+/*** Estilo footer ***/
+
+footer nav{
+    display: flex;
+    height: 120px;
+    background-color: #757575;
+    justify-content: center;
+    align-items: center;
+}
+
+footer nav a img{
+    display: inline-block;
+    height: 170px;
+    padding: 30px;
+}
+
+footer p{
+    text-align: center;
+    color: #757575;
+}
+
+footer nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 50px;
+}
+
+footer nav ul li a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+footer nav ul li a:hover{
+    color: #933c1b;
+}
+
+/*** Estilo main ***/
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: #933c1b;
+    margin-top: 30px;
+    font-weight: 900;
+}
+
+.slogan{
+    color:#a75433;
+    text-align: center;
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+h1:hover{
+    color: #a61a1c;
+}
+
+h2{
+    text-decoration: underline;
+}
+
+.center{
+    text-align: center;
+}
+
+/*** GRID/Productos ***/
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1800px;
+    max-height: fit-content;
+    margin: 10px auto;
+    gap: 2rem;
+}
+
+.item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    height: 300px;
+    box-shadow: 5px 5px 5px rgb(100, 98, 98);
+}
+
+.sticky {
+    position: sticky;
+    top: 0; 
+    background-color: #933c1b;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 5px rgb(100, 98, 98);
+    height: 10%;
+    border-radius: 10px;
+}
+
+.foto{
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+}
+
+.boton-agregar{
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid white;
+    background-color: #f9bd93;
+    margin: 2px;
+    padding: 3px
+}
+
+.boton-agregar:hover{
+    background-color: white;
+    border-color: #f9bd93;
+}
+
+/*** Carrito ***/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #f9bd93;
+    width: 80%;
+    max-width: 600px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#cartButton{
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid #933c1b;
+    background-color: #933c1b;
+    margin: 2px;
+    padding: 3px;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+}
+
+#cartButton:hover{
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+#checkoutButton{
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid white;
+    background-color: #f9bd93;
+    margin: 2px;
+    padding: 3px;
+}
+
+#checkoutButton:hover{
+    background-color: white;
+    border-color: #f9bd93;
+}
+
+.removeButton{
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 2px solid white;
+    background-color: #c41400;
+    margin: 2px;
+    padding: 3px
+}
+
+.removeButton:hover{
+    background-color: white;
+    border-color: #c41400;
+}
