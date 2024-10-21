@@ -1,21 +1,11 @@
-const products = [
-    { id: 'hamburguesa', name: 'Hamburguesa completa', price: 40, imagen: "img/hamburguesa.jpg"},
-    { id: 'pollo', name: 'Pollo al spiedo', price: 70, imagen: "img/pollo.jpg" },
-    { id: 'milanesa', name: 'Milanesa napolitana', price: 55, imagen: "img/mila-napo.jpg"  },
-    { id: 'pizza', name: 'Pizza de rucula y tomate', price: 50, imagen: "img/pizza.jpg" },
-
-    { id: 'papas', name: 'Papas fritas', price: 30, imagen: "img/paps-fritas.jpg"},
-    { id: 'ensalada', name: 'Ensalada de lechuga y tomate', price: 15, imagen: "img/ensalada.jpg"  },
-    { id: 'pure', name: 'Pure de calabaza', price: 25, imagen: "img/pure.jpg" },
-    { id: 'tortilla', name: 'Tortilla de papa', price: 35, imagen: "img/tortilla-de-patatas-espanola.jpg"},
-
-    { id: 'gaseosa', name: 'Gaseosa 2lt', price: 30, imagen: "img/coca-cola.jpg"},
-    { id: 'saborizada', name: 'Agua saborizada 500ml', price: 18, imagen: "img/jugo.jpg"  },
-    { id: 'agua', name: 'Agua sin gas 500ml', price: 13, imagen: "img/agua.jpg"  },
-    { id: 'cerveza', name: 'Cerveza 710cc', price: 20, imagen: "img/cerveza.jpg" },
-];
-
 let cart = [];
+
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then (data => {
+        products = data;
+        loadProducts(products);
+    })
 
 /*** Cargar productos al inicio ***/
 
@@ -47,6 +37,21 @@ function loadCart() {
 
 /*** Cargar productos al carrito ***/
 function addToCart(productId) {
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        gravity: "bottom", 
+        position: "left",
+        stopOnFocus: true,
+        style: {
+        background: "linear-gradient(to right, #a61a1c, #f59c39)",
+        borderRadius: "2rem",
+        },
+        onClick: function(){} // Callback after click
+    }).showToast();
+
     const product = products.find(p => p.id === productId);
     const cartItem = cart.find(item => item.id === productId);
 
@@ -87,6 +92,20 @@ function updateCart() {
 
 /*** Eliminar productos del carrito ***/
 function removeFromCart(productId) {
+    Toastify({
+        text: "Producto eliminado",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        gravity: "bottom", 
+        position: "left",
+        stopOnFocus: true,
+        style: {
+        background: "linear-gradient(to right, #a61a1c, #f59c39)",
+        borderRadius: "2rem",
+        },
+        onClick: function(){}
+    }).showToast();
     cart = cart.filter(item => item.id !== productId);
     updateCart();
 }
@@ -106,13 +125,21 @@ function closeCart() {
 /*** Función para finalizar la compra ***/
 function checkout() {
     if (cart.length > 0) {
-        alert('¡Gracias por su compra! El repartidor se encuentra en camino.');
+        Swal.fire({
+            icon: "success",
+            title: "¡Gracias!",
+            text: "El pedido fue confirmado, gracias por su compra",
+        });
         cart = []; 
         updateCart();
         localStorage.removeItem('cart');
         closeCart();
     } else {
-        alert('El carrito está vacío. Agrega productos antes de finalizar la compra.');
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "¡El carrito está vacío! Agrega productos antes de finalizar la compra",
+        });
         closeCart();
     }
 }

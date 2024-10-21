@@ -156,15 +156,15 @@ h2{
     cursor: pointer;
     border-radius: 1rem;
     border: 2px solid white;
-    background-color: #f9bd93;
+    background: linear-gradient(to right, #f9bd93, #f59c39);
     margin: 2px;
     padding: 3px
 }
 
 .boton-agregar:hover{
-    background-color: white;
-    border-color: #f9bd93;
+    background: linear-gradient(to right, #f59c39, #f9bd93);
 }
+
 
 /*** Carrito ***/
 
@@ -180,10 +180,11 @@ h2{
 }
 
 .modal-content {
-    background-color: white;
+    border-radius: 42px;
+    background: #ffffff;
+    box-shadow: inset 23px -23px 44px #c4c4c4, inset -23px 23px 44px #ffffff;
     margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #f9bd93;
+    padding: 60px;
     width: 80%;
     max-width: 600px;
 }
@@ -196,7 +197,7 @@ h2{
 }
 
 .close-button:hover {
-    color: black;
+    color: #c41400;
     text-decoration: none;
     cursor: pointer;
 }
@@ -223,26 +224,30 @@ h2{
     cursor: pointer;
     border-radius: 1rem;
     border: 2px solid white;
-    background-color: #f9bd93;
-    margin: 2px;
-    padding: 3px;
+    background: linear-gradient(to right, #f9bd93, #f59c39);
+    margin: 4;
+    padding: 1rem;
 }
 
 #checkoutButton:hover{
-    background-color: white;
-    border-color: #f9bd93;
+    background: linear-gradient(to right, #f59c39, #f9bd93);
 }
 
 .removeButton{
     cursor: pointer;
     border-radius: 1rem;
     border: 2px solid white;
-    background-color: #c41400;
+    color: white;
+    border-radius: 48px;
+    background: #c41400;
+    box-shadow: inset 19px 19px 17px #7b0d00, inset -19px -19px 17px #ff1b00;
     margin: 2px;
-    padding: 3px
+    padding: 6px
 }
 
 .removeButton:hover{
-    background-color: white;
-    border-color: #c41400;
+    background: #c41400;
+    box-shadow: inset 19px 19px 17px #ff1b00, inset -19px -19px 17px #7b0d00;
+    margin: 2px;
+    padding: 6px
 }
