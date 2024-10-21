@@ -1,14 +1,14 @@
 let cart = [];
+let products = [];
 
 fetch("./js/productos.json")
     .then(response => response.json())
     .then (data => {
         products = data;
-        loadProducts(products);
+        loadProducts(data);
     })
 
 /*** Cargar productos al inicio ***/
-
 function loadProducts() {
     const productList = document.getElementById('product-list');
     products.forEach(product => {
